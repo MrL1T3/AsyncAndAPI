@@ -1,13 +1,19 @@
 import conversionHandler from "./convert";
 
+function printElements(conversion_rate, currency) {
+  const inputCash = document.querySelector('#starting-money').value;
+  const finalValue = inputCash * conversion_rate;
+  document.querySelector('#showResponse').innerText = "The conversion of " + inputCash + " USD to " + currency + " is " + finalValue.toFixed(2);
+}
+
 window.addEventListener("load", function() {
-  let formElem = document.querySelector('form');
-  if(formElem) {
-    formElem.addEventListener("submit", handleFormSubmission);
+  let formElement = document.querySelector('form');
+  if(formElement) {
+    formElement.addEventListener("submit", handleFormSubmission);
   }
-  const convertButton = this.document.getElementById('submit-button');
+  const submitButton = this.document.getElementById('submit-button');
   const currencyCode = document.getElementById('iso-code');
-  convertButton.addEventListener("click", function() {
-    convertHandler.getConversion(currencyCode.value, printElements);
+  submitButton.addEventListener("click", function() {
+    conversionHandler.getConversion(currencyCode.value, printElements);
   });
 });
