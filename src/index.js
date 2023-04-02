@@ -1,9 +1,9 @@
 import conversionHandler from "./convert";
 
 function printElements(conversion_rate, currency) {
-  const inputCash = document.querySelector('#starting-money').value;
+  const inputCash = document.querySelector('#starting-amount').value;
   const finalValue = inputCash * conversion_rate;
-  document.querySelector('#showResponse').innerText = "The conversion of " + inputCash + " USD to " + currency + " is " + finalValue.toFixed(2);
+  document.querySelector('#response-area').innerText = "The conversion of " + inputCash + " USD to " + currency + " is " + finalValue.toFixed(2);
 }
 
 window.addEventListener("load", function() {
